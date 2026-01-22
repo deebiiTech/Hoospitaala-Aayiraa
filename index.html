@@ -14,7 +14,15 @@
             display: block;
         }
 
-        /* --- HAMBURGER MENU CSS --- */
+        /* --- HAMBURGER MENU & MOBILE TITLE CSS --- */
+        .mobile-title {
+            display: none; /* Jalqaba irratti ni dhokata */
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
         .menu-icon {
             display: none;
             color: white;
@@ -31,12 +39,22 @@
                 position: relative;
             }
 
-            .menu-icon {
+            .logo a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+            }
+
+            .mobile-title {
                 display: block; /* Bilbila irratti qofa mul'ata */
             }
 
+            .menu-icon {
+                display: block; 
+            }
+
             #menu {
-                display: none; /* Jalqaba irratti dhoksaa */
+                display: none; 
                 flex-direction: column;
                 position: absolute;
                 top: 100%;
@@ -50,7 +68,7 @@
             }
 
             #menu.active {
-                display: flex; /* Yeroo tuqamu ni mul'ata */
+                display: flex; 
             }
 
             #menu li {
@@ -113,6 +131,7 @@
         <div class="logo">
             <a href="#home">
                 <img src="logo.png.jfif" alt="Ayira Hospital Logo" id="nav-logo">
+                <span class="mobile-title">Ayira Hospital</span>
             </a>
         </div>
 
