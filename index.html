@@ -13,6 +13,58 @@
             width: auto;
             display: block;
         }
+
+        /* --- HAMBURGER MENU CSS --- */
+        .menu-icon {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                position: relative;
+            }
+
+            .menu-icon {
+                display: block; /* Bilbila irratti qofa mul'ata */
+            }
+
+            #menu {
+                display: none; /* Jalqaba irratti dhoksaa */
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #003580;
+                padding: 20px 0;
+                z-index: 1000;
+                text-align: center;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+            }
+
+            #menu.active {
+                display: flex; /* Yeroo tuqamu ni mul'ata */
+            }
+
+            #menu li {
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            #menu li a {
+                display: block;
+                padding: 10px;
+            }
+        }
+        /* --- END HAMBURGER CSS --- */
+
         /* Footer miidhagsuuf */
         footer {
             background: #003580;
@@ -63,12 +115,17 @@
                 <img src="logo.png.jfif" alt="Ayira Hospital Logo" id="nav-logo">
             </a>
         </div>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <ul id="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#specialists">Specialists</a></li>
-            <li><a href="#news">Daily News</a></li>
+            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="#specialists" onclick="toggleMenu()">Specialists</a></li>
+            <li><a href="#news" onclick="toggleMenu()">Daily News</a></li>
             <li><a href="admin.html" class="admin-link">Admin</a></li>
         </ul>
     </nav>
@@ -125,7 +182,7 @@
                 <a href="https://facebook.com/qajeelaahambisaamoosisaa"><i class="fab fa-facebook"></i></a>
                 <a href="https://tiktok/@qajeelaa430"><i class="fab fa-tiktok"></i></a>
                 <a href="www.linkedin.com/in/kajela-hambisa-434ab4257"><i class="fab fa-linkedin"></i></a>
-                <a href="https://youtube.com/@Qajela-tube><i class="fab fa-youtube"></i></a>
+                <a href="https://youtube.com/@Qajela-tube"><i class="fab fa-youtube"></i></a>
                 <a href="https://wa.me/251910166955" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://github.com" target="DeebiiTech"><i class="fab fa-github"></i></a>
             </div>
@@ -136,6 +193,15 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            if (window.innerWidth <= 768) {
+                menu.classList.toggle("active");
+            }
+        }
+    </script>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -207,6 +273,5 @@
         loadData();
     </script>
 </body>
-
 </html>
 
