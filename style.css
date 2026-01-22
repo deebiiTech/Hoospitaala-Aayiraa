@@ -63,7 +63,7 @@ h2 { color: #003580; margin-bottom: 20px; border-left: 5px solid #2ecc71; paddin
     width: auto;
     display: block;
     transition: 0.3s;
-    border: 2px solid white; /* Stroke adii alaatti */
+    border: 2px solid brown; /* Stroke adii alaatti */
     border-radius: 5px;      /* Kofee xiqqoo laaffisuuf */
     padding: 2px;
     background: white;       /* Background logo keessatti */
@@ -124,3 +124,4 @@ h2 { color: #003580; margin-bottom: 20px; border-left: 5px solid #2ecc71; paddin
 }
 
 footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 50px; }
+
